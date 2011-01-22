@@ -2,6 +2,7 @@ import os
 import glob
 import cherrypy
 import hashlib
+import lib
 
 def hashing(message):
     s = hashlib.sha512()
@@ -26,6 +27,3 @@ def sanitize(message):
     
     return result
     
-def get_setting(item):
-	
-	return item
