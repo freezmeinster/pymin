@@ -26,12 +26,15 @@ class controller():
 
     @cherrypy.expose
     def status_server(self):
-	return template_loader.render('login.html')
+	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Status Server', 'nama' : 'Informasi singkat tentang Pymin' }
+	return template_loader.render('status.html',data)
 	
     @cherrypy.expose
     def log(self):
-	return template_loader.render('login.html')
+	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Catatan Sistem', 'nama' : 'Informasi singkat tentang Pymin' }
+	return template_loader.render('log.html',data)
 	
     @cherrypy.expose
     def tentang(self):
-	return template_loader.render('tentang.html')
+	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Tentang Pymin', 'nama' : 'Informasi singkat tentang Pymin' }
+	return template_loader.render('tentang.html',data)
