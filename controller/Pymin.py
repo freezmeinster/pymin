@@ -7,7 +7,7 @@ class controller():
     @cherrypy.expose
     def index(self):
         vps = vps_info.list_vps()
-	data = { 'nama' : 'data' , 'data' : vps }
+	data = { 'nama' : 'List VPS' , 'data' : vps }
 	return template_loader.render('coba.html',data)
 	
 
