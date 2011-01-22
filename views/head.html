@@ -6,6 +6,7 @@
 <link href="/asset/styles/layout.css" rel="stylesheet" type="text/css" />
 <link href="/asset/styles/wysiwyg.css" rel="stylesheet" type="text/css" />
 <link href="/asset/themes/blue/styles.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" type="image/png" href="/asset/img/favicon.png" />
 <script type="text/javascript" SRC="/asset/scripts/enhance.js"></script>	
 <script type='text/javascript' SRC="/asset/scripts/excanvas.js"></script>
 <script type='text/javascript' SRC="/asset/scripts/jquery.min.js"></script>
@@ -25,10 +26,10 @@
     <div id="breadcrumb">
     	<ul>	
     	<li><img SRC="/asset/img/icons/icon_breadcrumb.png" alt="Location" /></li>
-        	<li><strong>Location:</strong></li>
-            <li><a href="#" title="">Sub Section</a></li>
+        	<li><strong>Anda Sekarang:</strong></li>
+        	<li><a href="{{ url }}" title="">{{ branch }}</a></li>
             <li>/</li>
-            <li class="current">Control Panel</li>
+            <li class="current">{{ head }}</li>
         </ul>
     </div>
     

@@ -15,7 +15,7 @@ body {height: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 13px; 
 	/* Header Elements */
 	
 	#header {width: 100%; height: 70px; background: #353535 url(../img/bg_header.png) repeat-x bottom;}
-		.logo {float: left; padding: 20px 0 0 30px;}
+		.logo {float: left; padding: 3px 0 0 30px;}
 	
 		#searcharea {float: right; padding: 15px 15px 0 0;}
 			#searcharea p {color: #ccc; padding-top: 10px;}
