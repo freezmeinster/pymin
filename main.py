@@ -3,12 +3,13 @@
 import cherrypy
 import os.path
 from controller import *
+from lib import template_loader,setting,item
 
 class Root():
     
     @cherrypy.expose
     def index(self):
-	return "ganteng"
+	return template_loader.render('login.html')
 
 
 pymin_config = os.path.join(os.path.dirname(__file__), 'pymin.conf')
