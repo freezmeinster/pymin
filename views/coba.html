@@ -1,9 +1,11 @@
 {% include "head.html" %}
     <div class="contentcontainer">
 	<div class="headings alt">
-	    <h2>Usage bar exmaples</h2>
+	    <h2>{{ nama }}</h2>
 	</div>
-	   
+	    {% for a in data %}
+			<a href="">{% print a %}</a><br>
+		{% endfor %}
     </div>
 {% include "sidebar.html" %}
 {% include "foot.html" %}
