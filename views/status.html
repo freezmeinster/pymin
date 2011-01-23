@@ -1,11 +1,35 @@
  {% include "head.html" %}
-    <div class="contentcontainer">
-	<div class="headings alt">
+    <div class="contentcontainer med left">
+	<div class="headings altheading">
 	    <h2>{{ nama }}</h2>
 	</div>
-        <div class="contentbox"> 
-        
+    <div class="contentbox">
+ 
+        <p> 
+	    <table>
+		<tr><td>Memori Server Terpasang</td> <td>:</td><td><strong>{{ data['memori']}}</strong></td></tr>
+		<tr><td>Memori Server Sisa</td><td>:</td><td><div class="usagebox" style="width: 300px;"><div class="{{ data['freebar']}}" style="width: {{ data['freememori']}}%;" align="center"><span style="color: #4545CA; display: block; padding-top: 4px;"> {{ data['freememori']}} %</span></div></td></tr>
+		<tr><td>Jenis Proccesor</td><td>:</td><td><strong>{{ data['jenis_proc']}}</strong></td></tr>
+		<tr><td>Kerja CPU </td><td>:</td><td><div class="usagebox" style="width: 300px;"><div class="{{ data['procbar']}}" style="width: {{ data['proc']}}%;" align="center"><span style="color: #4545CA; display: block; padding-top: 4px;"> {{ data['proc']}} %</span></div></td></tr>
+		
+		<tr><td>Server sudah menyala selama</td><td>:</td><td><strong>{{ data['uptime']}}</strong></td></tr>
+	    </table>
+	</p>
 	</div>
     </div>
+    
+    <div class="contentcontainer sml right">
+	<div class="headings altheading">
+	    <h2>Informasi Mengenai Vserver</h2>
+	</div>
+	<div class="contentbox">
+	    <table>
+		<tr><td>Vserver Root Dir</td><td>:</td><td>{{ vserver['rootdir'] }}</td></tr>
+		<tr><td>Vserver Installation Prefix</td><td>:</td><td>{{ vserver['prefix'] }} </td></tr>
+		<tr><td>Per Vserver Conf Dir</td><td>:</td><td>{{ vserver['confdir'] }}</td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	    </table>
+	</div>
+   </div>
 {% include "sidebar.html" %}
 {% include "foot.html" %}

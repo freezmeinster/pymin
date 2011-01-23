@@ -1,0 +1,19 @@
+{% include "head.html" %}
+    <div class="contentcontainer">
+    <div class="headings altheading ">
+	    <h2>{{ nama }}</h2>
+	</div>
+        <div class="contentbox">
+        <table width="100%">
+        <thead>
+        <tr><th>Nama Vserver</th><th>ID Vserver</th><th>Sisa Memori</th><th>IP Vserver</th><th>Waktu menyala</th><th>Aksi</th></tr>
+        </thead>
+        <tbody>
+	    {% for a in data %}
+	    <tr><td>{% print a['nama_vps'] %}</td><td>{% print a['id'] %}</td><td>{% print a['memori'] %} MB</td><td><a target="blank" href="http://{% print a['ip'] %}">{% print a['ip'] %}</a></td><td>4 bulan  </td><td><input class="btnred" type="button" id="" value="Matikan"></td></tr>
+		{% endfor %}
+        </tbody>
+        </table>
+    </div></div>
+{% include "sidebar.html" %}
+{% include "foot.html" %}
