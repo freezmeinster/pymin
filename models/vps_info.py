@@ -6,7 +6,8 @@ from lib import item
 def list_vps():
          data = []
          vps_dir = item.get_setting('vserver_dir')
-         conf_dir = item.get_setting('vserver_conf')
+         pref = item.get_setting('vserver_prefix')
+         conf_dir = pref+'/etc/vservers/'
          
          vps = os.listdir(vps_dir)
          vps.remove('.pkg')
@@ -25,5 +26,5 @@ def list_vps():
 	     ipn = ip.read()
 	     ip.close()
 	     
-	     data += [{'nama_vps' : a,'id' : fd ,'memori' : str(mn) ,'ip' : ipn},]
+	     data += [{'nama_vps' : a.title(),'id' : fd ,'memori' : str(mn) ,'ip' : ipn},]
          return data

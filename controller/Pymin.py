@@ -40,3 +40,8 @@ class controller():
     def tentang(self):
 	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Tentang Pymin', 'nama' : 'Informasi singkat tentang Pymin' }
 	return template_loader.render('tentang.html',data)
+	
+    @cherrypy.expose
+    def pengguna(self):
+	data = {'url' : '/pymin/pengguna', 'head' : 'Pengaturan Sistem' , 'branch' : 'Pengguna Pymin', 'nama' : 'Pengaturan Pengguna Pymin' }
+	return template_loader.render('pengguna.html',data)
