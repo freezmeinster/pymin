@@ -4,7 +4,18 @@
 	    <h2>{{ nama }}</h2>
 	</div>
         <div class="contentbox"> 
-        
+        <table>
+	    <tr><th>Username</th><th>Nama</th><th>Status</th><th>Aksi</th></tr>
+	    {% for a in data %}
+		{% if a[4] == 1 %}
+		    {% set stat = '<span class="usagetxt greentxt">Aktif</span>' %}
+		{% else %}
+		    {% set stat = '<span class="usagetxt redtxt">Di Blokir</span>'%}
+		{% endif %}
+		 <tr><td>{% print a[1] %}</td><td>{% print a[3] %}</td><td>{{ stat }}</td><td><input type="button" class="btn" value="Ubah"> <input type="button" class="btnred" value="Hapus"></td></tr>
+	    {% endfor %}
+        </table><br><br>
+        <input type="button" class="btn" value="Tambah Pengguna" onclick="alert('holla')">
 	</div>
     </div>
 {% include "sidebar.html" %}

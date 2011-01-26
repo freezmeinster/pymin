@@ -72,7 +72,7 @@ def info():
 	jproc += a+' '
     
     data = {
-	'memori' 	: str(mem).replace('\n','')+' MB' ,
+	'memori' 	: str(mem).replace('\n','')+' Megabyte' ,
 	'freememori' 	: str(persen).replace('\n',''),
 	'freebar' 	: bar,
 	'proc' 		: str(proc).replace('\n',''),
@@ -108,25 +108,25 @@ def info_vserver():
     suft = ''
     
     if int(vt)/byte == 0:
-      suft = 'Mb'
+      suft = 'Megabyte'
       hasilt = int(vt)/1000
     elif int(vt)/byte > 0:
-      suft = 'Gb'
+      suft = 'Gigabyte'
       hasilt = int(vt)/byte
     
     if int(vf)/byte == 0:
-      suf = 'Mb'
+      suf = 'Megabyte'
       hasil = int(vf)/1000
     elif int(vf)/byte > 0:
-      suf = 'Gb'
+      suf = 'Gigabyte'
       hasil = int(vf)/byte
       
     persenmount = hasil*100/hasilt
-    if int(hasil) <= 30:
+    if persenmount <= 30:
 	mountbar = 'highbar'
-    elif int(hasil) > 30 and int(hasil) <= 70:
+    elif persenmount > 30 and persenmount <= 70:
 	mountbar = 'midbar'
-    elif int(hasil) > 70:
+    elif persenmount > 70:
 	mountbar = 'lowbar' 
     
       

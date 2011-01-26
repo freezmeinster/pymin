@@ -1,6 +1,6 @@
 import cherrypy,os
 from lib import template_loader,setting,item
-from models import *
+from models import vps_info,server_info,user
 
 class controller():
     
@@ -33,15 +33,23 @@ class controller():
 	
     @cherrypy.expose
     def log(self):
-	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Catatan Sistem', 'nama' : 'Informasi singkat tentang Pymin' }
+	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Catatan Sistem', 'nama' : 'Catatan sistem Pymin' }
 	return template_loader.render('log.html',data)
 	
     @cherrypy.expose
     def tentang(self):
+	
 	data = {'url' : '/pymin/tentang', 'head' : 'Pengaturan Sistem' , 'branch' : 'Tentang Pymin', 'nama' : 'Informasi singkat tentang Pymin' }
 	return template_loader.render('tentang.html',data)
 	
     @cherrypy.expose
     def pengguna(self):
-	data = {'url' : '/pymin/pengguna', 'head' : 'Pengaturan Sistem' , 'branch' : 'Pengguna Pymin', 'nama' : 'Pengaturan Pengguna Pymin' }
+	data_user = user.list_user()
+	data = {'url' : '/pymin/pengguna', 'head' : 'Pengaturan Sistem' , 'branch' : 'Pengguna Pymin', 'nama' : 'Pengaturan Pengguna Pymin','data': data_user, }
 	return template_loader.render('pengguna.html',data)
+	
+
+    @cherrypy.expose
+    def sistem(self):
+	data = {'url' : '/pymin/sistem', 'head' : 'Pengaturan Sistem' , 'branch' : 'Sistem Pymin', 'nama' : 'Pengaturan Sistem Pymin' }
+	return template_loader.render('sistem.html',data)

@@ -1,7 +1,7 @@
 import os.path
 import sqlite3
 
-dbpath = os.path.join(os.path.dirname(__file__), 'db/mikail.db')
+dbpath = os.path.join(os.path.dirname(__file__), '../db/pymin.db')
     
 def query_select(stet,row=None):
      con = sqlite3.connect(dbpath)

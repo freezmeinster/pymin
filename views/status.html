@@ -25,11 +25,11 @@
 	</div>
 	<div class="contentbox">
 	    <table>
-		<tr><td>Direktori Rumah</td><td>:</td><td>{{ vserver['rootdir'] }}</td></tr>
-		<tr><td>Tempat Installasi</td><td>:</td><td>{{ vserver['prefix'] }} </td></tr>
-		<tr><td>Tempat Konfigurasi</td><td>:</td><td>{{ vserver['confdir'] }}</td></tr>
-		<tr><td>Partisi Penyimpanan</td><td>:</td><td>{{ vserver['mount']}}</td></tr>
-		<tr><td>Ukuran Penyimpanan</td><td>:</td><td>{{ vserver['totalmount']}}</td></tr>
+		<tr><td>Direktori Rumah</td><td>:</td><td><strong>{{ vserver['rootdir'] }}</strong></td></tr>
+		<tr><td>Tempat Installasi</td><td>:</td><td><strong>{{ vserver['prefix'] }}</strong></td></tr>
+		<tr><td>Tempat Konfigurasi</td><td>:</td><td><strong>{{ vserver['confdir'] }}</strong></td></tr>
+		<tr><td>Partisi Penyimpanan</td><td>:</td><td><strong>{{ vserver['mount']}}</strong></td></tr>
+		<tr><td>Ukuran Penyimpanan</td><td>:</td><td><strong>{{ vserver['totalmount']}}</strong></td></tr>
 		<tr><td>Sisa Penyimpanan</td><td>:</td><td><div class="usagebox" style="width: 200px;"><div class="{{ vserver['mountbar']}}" style="width: {{ vserver['persenmount']}}%;" align="center"><span style="color: #4545CA; display: block; padding-top: 4px;"> {{ vserver['persenmount']}}%</span></div></td></tr>
 	    </table>
 	</div>

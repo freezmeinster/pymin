@@ -1,7 +1,5 @@
+from lib import db
+
 def get_setting(setting):
-     data = {
-	    'vserver_dir' : '/home/vserver',
-            'vserver_prefix' : '/usr/local'
-	    }
-     hasil = data.get(setting)
-     return hasil
+     data = db.query_select("select nilai from setting where nama like '"+setting+"'") 
+     return data[0]
