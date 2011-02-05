@@ -237,3 +237,29 @@ body {height: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 13px; 
 	/* Footer */
 	
 	#footer {font-size: 11px; padding: 15px 10px; clear: both; background: url(../img/bg_footer.png) repeat-x bottom; margin-bottom: 20px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; -moz-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; text-shadow: 1px 1px 1px #fff;}
+
+.qtip .qtip-content{
+   padding: 10px;
+   overflow: hidden;
+}
+   
+   .qtip .qtip-content .qtip-title,
+   .qtip-cream .qtip-content .qtip-title{
+      background-color: #F0DE7D;
+   }
+   
+   .qtip-light .qtip-content .qtip-title{
+      background-color: #f1f1f1;
+   }
+
+   .qtip-dark .qtip-content .qtip-title{
+      background-color: #404040;
+   }
+
+   .qtip-red .qtip-content .qtip-title{
+      background-color: #F28279;
+   }
+   
+   .qtip-green .qtip-content .qtip-title{
+      background-color: #B9DB8C;
+   }

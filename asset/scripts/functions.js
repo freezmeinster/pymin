@@ -60,3 +60,33 @@ $(document).ready(function(){
 	$(document).ready(function() {
 			$('#wysiwyg').wysiwyg();
 		});
+		
+   $(document).ready(function() {
+     $('[tip]').each(function(){
+      var st = $(this).attr('st');
+      $(this).qtip({
+          content: {
+            text: $(this).attr('tip'),
+            },
+         position: {
+                  corner: {
+                     tooltip: 'bottomRight',
+                     target : 'topLeft'
+                  }
+               },
+          style: {
+                  border: {
+                     width: 5,
+                     radius: 10
+                  },
+                  padding: 10, 
+                  textAlign: 'center',
+                  tip: true, 
+                  name: st }
+
+      });
+   });
+   }); 
+
+
+

@@ -22,10 +22,19 @@ def info():
     bar = ''
     if persen <= 40:
 	bar = 'highbar'
+	pesan = '<br><br>Asik memori nya masih banyak ,rada seger nih'
+	style = 'green'
     elif persen > 40 and persen <= 60  :
 	bar = 'midbar'
+	pesan = """<br><br>Hosh,hosh,host. Server rada ngosngosan kok, ohh memori nya kurang dari setengah ternyata.<br><br>
+		   Biar nggak kehabisan memori , coba dicek lagi proses apa yang nggak perlu jalan di server """
+	style = 'cream'
     elif persen > 60:
 	bar = 'lowbar'
+	pesan = """Kacau-kacau , Server udah berkunang-kunang tuh, memori nya dikit lagi abis.<br><br>
+		   Coba cari tau deh proses apa yang bikin memori abis. Klo nggak reboot aja  server nya . 
+		"""
+	style = 'red'
     
     #uptime nya
     try:
@@ -64,6 +73,7 @@ def info():
 	procbar = 'midbar'
     elif int(proc) > 70:
 	procbar = 'highbar'
+
 	
     # cari tahu jenis CPU nya
     jproc = ''
@@ -74,12 +84,14 @@ def info():
     data = {
 	'memori' 	: str(mem).replace('\n','')+' Megabyte' ,
 	'freememori' 	: str(persen).replace('\n',''),
+	'fmem'		: str(fmem)+" Megabyte"+pesan,
 	'freebar' 	: bar,
 	'proc' 		: str(proc).replace('\n',''),
 	'procbar' 	: procbar,
 	'uptime' 	: string,
 	'jenis_proc'	: jproc,
-	'vkernel'	: str(k)
+	'vkernel'	: str(k),
+	'style'		: style,
 	}
 	
     return data
@@ -108,26 +120,32 @@ def info_vserver():
     suft = ''
     
     if int(vt)/byte == 0:
-      suft = 'Megabyte'
+      suft = ' Megabyte'
       hasilt = int(vt)/1000
     elif int(vt)/byte > 0:
-      suft = 'Gigabyte'
+      suft = ' Gigabyte'
       hasilt = int(vt)/byte
     
     if int(vf)/byte == 0:
       suf = 'Megabyte'
       hasil = int(vf)/1000
     elif int(vf)/byte > 0:
-      suf = 'Gigabyte'
+      suf = ' Gigabyte'
       hasil = int(vf)/byte
       
     persenmount = hasil*100/hasilt
     if persenmount <= 30:
 	mountbar = 'highbar'
+	pesan = '<br><br>Liat deh bar nya , udah rada merah kan. Tolong demi kenyamanan sistem , rada di bersihkan dulu ini harddisk '+rd+mn+' nya !!'
+	style = 'red'
     elif persenmount > 30 and persenmount <= 70:
 	mountbar = 'midbar'
+	pesan = '<br><br> Masih agak lega sih ruangan peyimpanan nya. Harus hati-hati, jangan sampe kepenuhan ya !'
+	style = 'blue'
     elif persenmount > 70:
 	mountbar = 'lowbar' 
+	pesan = '<br><br>Asik, Lega banget nih Harddisk, rada nyantai ahh '
+	style = 'green'
     
       
     data = {
@@ -137,6 +155,8 @@ def info_vserver():
 	    'mount'		: rd+mn ,
 	    'totalmount'	: str(hasilt)+suft,
 	    'persenmount'	: str(persenmount),
-	    'mountbar'		: mountbar
+	    'mountbar'		: mountbar,
+	    'mountsize'		: str(hasil)+" "+suf+pesan,
+	    'style'		: style,
 	}
     return data
