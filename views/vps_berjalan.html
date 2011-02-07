@@ -10,7 +10,7 @@
         </thead>
         <tbody>
 	    {% for a in data %}
-	    <tr><td>{% print a['nama_vps'] %}</td><td>{% print a['id'] %}</td><td>{% print a['memori'] %} MB</td><td><a target="blank" href="http://{% print a['ip'] %}">{% print a['ip'] %}</a></td><td>4 bulan  </td><td><input class="btnred" type="button" id="" value="Matikan"></td></tr>
+	    <tr><td>{% print a['nama_vps'] %}</td><td>{% print a['id'] %}</td><td tip="hgjhgjhgj" st="red">{% print a['freemem'] %} Mb</td><td><a target="blank" href="http://{% print a['ip'] %}">{% print a['ip'] %}</a></td><td>4 bulan  </td><td>{% print a['button']%}</td></tr>
 		{% endfor %}
         </tbody>
         </table>

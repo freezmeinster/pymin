@@ -22,8 +22,10 @@ def info():
     bar = ''
     if persen <= 40:
 	bar = 'highbar'
-	pesan = '<br><br>Asik memori nya masih banyak ,rada seger nih'
-	style = 'green'
+	pesan = """<br><br>Kacau-kacau , Server udah berkunang-kunang tuh, memori nya dikit lagi abis.<br><br>
+		   Coba cari tau deh proses apa yang bikin memori abis. Klo nggak reboot aja  server nya . 
+		"""
+	style = 'red'
     elif persen > 40 and persen <= 60  :
 	bar = 'midbar'
 	pesan = """<br><br>Hosh,hosh,host. Server rada ngosngosan kok, ohh memori nya kurang dari setengah ternyata.<br><br>
@@ -31,10 +33,8 @@ def info():
 	style = 'cream'
     elif persen > 60:
 	bar = 'lowbar'
-	pesan = """Kacau-kacau , Server udah berkunang-kunang tuh, memori nya dikit lagi abis.<br><br>
-		   Coba cari tau deh proses apa yang bikin memori abis. Klo nggak reboot aja  server nya . 
-		"""
-	style = 'red'
+	pesan = '<br><br>Asik memori nya masih banyak ,rada seger nih'
+	style = 'green'
     
     #uptime nya
     try:
