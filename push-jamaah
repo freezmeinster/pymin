@@ -5,5 +5,5 @@ read pesan
 git commit -m "$pesan"
 for a in $(cat .git/config | grep "\[remote" | cut -d" " -f2 | cut -d"\"" -f2);
 do
-      git push $a master 
+      git push $a devel 
 done
