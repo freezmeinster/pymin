@@ -8,7 +8,7 @@ from lib import template_loader,setting,item
 
 
 
-pymin_config = os.path.join(os.path.dirname(__file__), 'pymin.conf')
+pymin_config = os.path.join(os.path.realpath(__file__), 'pymin.conf')
 root = Root()
 root.pymin = Pymin.controller()
 root.libpymin = Libpymin.controller()
